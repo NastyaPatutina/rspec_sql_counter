@@ -3,9 +3,9 @@
 module RspecSqlMatcher
   class SqlFetcher
     SqlQueryInfo = Struct.new(:sql, :type_casted_binds, :times) do
-      # Приводит SqlHelper::SqlQueryInfo в читабельный текст
+      # Pretty SqlHelper::SqlQueryInfo
       #
-      # @return [String] читабельный текст
+      # @return [String] Pretty text
       def pretty_to_s
         if type_casted_binds.present?
           "#{times} times: #{sql} with values #{type_casted_binds}"
@@ -18,9 +18,9 @@ module RspecSqlMatcher
     class << self
       attr_reader :queries
 
-      # Собирает все sql запросы вызываемые в указанном блоке кода
+      # Collects all sql queries called in the specified block of code
       #
-      # @return [Array<SqlQueryInfo>] список собранных sql-запросов и из кол-во
+      # @return [Array<SqlQueryInfo>] list of collected sql queries and from quantity
       # @example
       # [
       #   #<struct SqlHelper::SqlQueryInfo sql="SELECT COUNT(*) FROM \"companies\"", type_casted_binds=[], times=1>,
@@ -39,7 +39,7 @@ module RspecSqlMatcher
 
       private
 
-      # Колбек для ActiveSupport::Notifications - заполняет список @queries
+      # Callback for ActiveSupport::Notifications - fill list @queries
       def active_support_callback(_name, _started, _finished, _unique_id, payload)
         return if %w[CACHE SCHEMA].include?(payload[:name])
 
@@ -53,12 +53,12 @@ module RspecSqlMatcher
         end
       end
 
-      # Находит был ли уже такой SQL-запрос и возвращает его
+      # Finds whether there has already been such a SQL query and returns it
       #
-      # @param sql [String] проверяемый объект
-      # @param type_casted_binds [Array] проверяемый объект
-      # @return [SqlQueryInfo, nil] найденный запрос
-      #   Если не найден nil
+      # @param sql [String] checked sql-query
+      # @param type_casted_binds [Array] checked binds
+      # @return [SqlQueryInfo, nil] found query
+      #   If not found is nil
       def exists_query(sql:, type_casted_binds:)
         queries.find { |q| q.sql == sql && q.type_casted_binds == type_casted_binds }
       end
