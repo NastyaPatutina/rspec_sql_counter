@@ -1,24 +1,50 @@
-# RspecSqlMatcher
+# RSpec SQL Matcher
 
-TODO: Delete this and the text below, and describe your gem
+Welcome to rspec_sql_matcher gem!
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rspec_sql_matcher`. To experiment with that code, run `bin/console` for an interactive prompt.
+It helps you to test SQL queries, that are called in code blocks.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add this line to your application's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+```ruby
+gem 'rspec_sql_matcher'
+```
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+And then execute:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+    bundle install
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Or install it yourself as:
+
+    gem install rspec_sql_matcher
 
 ## Usage
 
-TODO: Write usage instructions here
+To test that query called in method, add this code on your it-block:
+
+    expect { ReportGenerator.call }.to call_sql_query('SELECT COUNT(*) FROM "users"')
+
+Also to test query not called in method use:
+
+    expect { ReportGenerator.call }.not_to call_sql_query('SELECT COUNT(*) FROM "users"')
+
+You can restrict the matcher using times counter:
+
+    expect { ReportGenerator.call }.to call_sql_query('SELECT COUNT(*) FROM "users"').times(2)
+
+You can restrict the matcher using bind values:
+
+    expect { ReportGenerator.call }.to call_sql_query('SELECT "users".* FROM "users" WHERE "users"."name" = $1').with('Karl')
+
+Below is an example of a description of an error in tests
+
+```
+ Expected to call SQL query SELECT "companies".* FROM "companies" LIMIT $1 OFFSET $2 with values [1, 2] 1 times, but found this queries:
+    3 times: SELECT COUNT(*) FROM "companies"
+    1 times: SELECT COUNT(*) FROM (SELECT 1 AS one FROM "companies" LIMIT $1 OFFSET $2) subquery_for_count with values [5, 10]
+```
 
 ## Development
 
@@ -28,7 +54,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rspec_sql_matcher. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rspec_sql_matcher/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/NastyaPatutina/rspec_sql_matcher. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/NastyaPatutina/rspec_sql_matcher/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -36,4 +62,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the RspecSqlMatcher project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rspec_sql_matcher/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the RspecSqlMatcher project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/NastyaPatutina/rspec_sql_matcher/blob/main/CODE_OF_CONDUCT.md).

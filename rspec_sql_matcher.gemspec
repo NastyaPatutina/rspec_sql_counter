@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['Nastya Patutina']
   spec.email = ['npatutina@gmail.com']
 
-  spec.summary = 'RSpec helper for check SQL queries'
-  spec.description = 'RSpec helper for check SQL queries'
+  spec.summary = 'RSpec matcher for SQL queries'
+  spec.description = 'RSpec matcher for SQL queries'
   spec.homepage = 'https://github.com/NastyaPatutina/rspec_sql_matcher'
   spec.required_ruby_version = '>= 2.6.0'
 
