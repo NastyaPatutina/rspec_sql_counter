@@ -3,7 +3,7 @@
 require_relative 'lib/rspec_sql_matcher/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'rspec_sql_matcher'
+  spec.name = 'rspec_sql_counter'
   spec.version = RspecSqlMatcher::VERSION
   spec.authors = ['Nastya Patutina']
   spec.email = ['npatutina@gmail.com']

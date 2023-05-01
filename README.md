@@ -9,7 +9,7 @@ It helps you to test SQL queries, that are called in code blocks.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rspec_sql_matcher'
+gem 'rspec_sql_counter'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    gem install rspec_sql_matcher
+    gem install rspec_sql_counter
 
 ## Usage
 
