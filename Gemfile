@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in rspec_sql_matcher.gemspec
+# Specify your gem's dependencies in rspec_sql_counter.gemspec
 gemspec
 
 gem 'rake', '~> 13.0'

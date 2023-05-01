@@ -1,6 +1,6 @@
-# RSpec SQL Matcher
+# RSpec SQL Counter
 
-Welcome to rspec_sql_matcher gem!
+Welcome to rspec_sql_counter gem!
 
 It helps you to test SQL queries, that are called in code blocks.
 
@@ -21,6 +21,9 @@ Or install it yourself as:
     gem install rspec_sql_counter
 
 ## Usage
+Add to `rails_helper.rb` or your spec-file:
+
+    require 'rspec_sql_counter'
 
 To test that query called in method, add this code on your it-block:
 
@@ -54,7 +57,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/NastyaPatutina/rspec_sql_matcher. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/NastyaPatutina/rspec_sql_matcher/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/NastyaPatutina/rspec_sql_counter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/NastyaPatutina/rspec_sql_counter/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -62,4 +65,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the RspecSqlMatcher project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/NastyaPatutina/rspec_sql_matcher/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the RspecSqlCounter project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/NastyaPatutina/rspec_sql_counter/blob/main/CODE_OF_CONDUCT.md).

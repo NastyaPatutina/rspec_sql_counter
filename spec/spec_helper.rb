@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rspec_sql_matcher'
+require 'rspec_sql_counter'
 require 'active_record'
 require 'database_cleaner'
 
@@ -8,7 +8,7 @@ RSpec.configure do |config|
   ActiveRecord::Base.logger = Logger.new($stdout)
   ActiveRecord::Base.establish_connection(
     adapter: 'postgresql',
-    database: ENV['POSTGRES_DB'] || 'rspec_sql_matcher_test',
+    database: ENV['POSTGRES_DB'] || 'rspec_sql_counter_test',
     host: ENV['POSTGRES_HOST'] || 'localhost',
     port: ENV['POSTGRES_PORT'] || '5432',
     username: ENV['POSTGRES_USER'] || 'postgres',

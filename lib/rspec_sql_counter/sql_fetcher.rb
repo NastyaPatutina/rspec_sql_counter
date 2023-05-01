@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module RspecSqlMatcher
+module RspecSqlCounter
   class SqlFetcher
     SqlQueryInfo = Struct.new(:sql, :type_casted_binds, :times) do
       # Pretty SqlHelper::SqlQueryInfo
