@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rspec_sql_matcher (0.1.0)
+    rspec_sql_counter (0.1.0)
       rails (>= 4.0.13)
       rspec (~> 3.0)
 
@@ -210,7 +210,7 @@ DEPENDENCIES
   pg (~> 1.4)
   rake (~> 13.0)
   rspec (~> 3.0)
-  rspec_sql_matcher!
+  rspec_sql_counter!
   rubocop-rails
   rubocop-rspec
 
