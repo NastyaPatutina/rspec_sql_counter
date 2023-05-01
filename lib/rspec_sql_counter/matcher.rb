@@ -2,7 +2,7 @@
 
 require_relative 'sql_fetcher'
 
-module RspecSqlMatcher
+module RspecSqlCounter
   module Matcher
     # rubocop:disable Metrics/BlockLength
     # Matcher for SQL queries

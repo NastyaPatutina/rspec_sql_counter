@@ -2,7 +2,7 @@
 
 require './spec/test_models/relation'
 
-RSpec.describe RspecSqlMatcher::Matcher do
+RSpec.describe RspecSqlCounter::Matcher do
   describe '#check sql query' do
     context 'when #call_sql_query' do
       it 'simple sql query' do

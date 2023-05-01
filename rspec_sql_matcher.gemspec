@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-require_relative 'lib/rspec_sql_matcher/version'
+require_relative 'lib/rspec_sql_counter/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'rspec_sql_counter'
-  spec.version = RspecSqlMatcher::VERSION
+  spec.version = RspecSqlCounter::VERSION
   spec.authors = ['Nastya Patutina']
   spec.email = ['npatutina@gmail.com']
 
   spec.summary = 'RSpec matcher for SQL queries'
   spec.description = 'RSpec matcher for SQL queries'
-  spec.homepage = 'https://github.com/NastyaPatutina/rspec_sql_matcher'
+  spec.homepage = 'https://github.com/NastyaPatutina/rspec_sql_counter'
   spec.required_ruby_version = '>= 2.6.0'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/NastyaPatutina/rspec_sql_matcher'
-  spec.metadata['changelog_uri'] = 'https://github.com/NastyaPatutina/rspec_sql_matcher'
+  spec.metadata['source_code_uri'] = 'https://github.com/NastyaPatutina/rspec_sql_counter'
+  spec.metadata['changelog_uri'] = 'https://github.com/NastyaPatutina/rspec_sql_counter'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
