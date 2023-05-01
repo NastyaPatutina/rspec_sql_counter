@@ -21,6 +21,9 @@ Or install it yourself as:
     gem install rspec_sql_counter
 
 ## Usage
+Add to `rails_helper.rb` or your spec-file:
+
+    require 'rspec_sql_counter'
 
 To test that query called in method, add this code on your it-block:
 
